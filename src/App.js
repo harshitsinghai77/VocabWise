@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import { Main, Heading, Paragraph } from "grommet";
+
+import MeaningTable from "./meaning";
+import AddWord from "./addWord";
+import "./App.css";
 
 function App() {
+  // set the words in state
+  const [newWord, setNewWord] = useState("");
+
+  const newWordAdded = (word) => {
+    // add the new word to the state
+    setNewWord(word);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Main pad="large" margin={{ horizontal: "xlarge" }}>
+        <AddWord newWordAdded={newWordAdded} />
+        <Heading>Words I learn</Heading>
+        <Paragraph>Words and meaning I come accross.</Paragraph>
+        <MeaningTable newWord={newWord} />
+      </Main>
     </div>
   );
 }
