@@ -18,8 +18,8 @@ function App() {
     <div className="App">
       <Main pad="large" margin={{ horizontal: "xlarge" }}>
         <AddWord newWordAdded={newWordAdded} />
-        <Heading>Words I learn</Heading>
-        <Paragraph>Words and meaning I come accross.</Paragraph>
+        <Heading>Vocab Wise</Heading>
+        <Paragraph>Words and their meaning I come accross.</Paragraph>
         <MeaningTable newWord={newWord} />
       </Main>
     </div>
